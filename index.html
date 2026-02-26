@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage DéDé | Vakmanschap & Vertrouwen</title>
+    <meta name="description" content="Garage DéDé - Uw betrouwbare autobedrijf voor onderhoud, reparatie, airco service, banden en professionele diagnose.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="#E63946"/>
+                        <path d="M10 20h20M20 10v20M13 13l14 14M27 13L13 27" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">GARAGE DéDé</span>
+                    <span class="logo-tagline">Vakmanschap & Vertrouwen</span>
+                </span>
+            </a>
+
+            <nav class="nav-desktop" id="navDesktop">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="diensten.html">Diensten <svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+                        <ul class="dropdown">
+                            <li><a href="onderhoud.html">Onderhoud</a></li>
+                            <li><a href="reparatie.html">Reparatie</a></li>
+                            <li><a href="airco.html">Airco Service</a></li>
+                            <li><a href="banden.html">Banden</a></li>
+                            <li><a href="diagnose.html">Diagnose</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="over-ons.html">Over Ons</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:+31625275552" class="header-phone">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span>06 252 755 52</span>
+                </a>
+                <a href="contact.html#afspraak" class="btn btn-primary btn-sm">Afspraak Maken</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Menu openen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="diensten.html">Diensten</a></li>
+                <li><a href="onderhoud.html">Onderhoud</a></li>
+                <li><a href="reparatie.html">Reparatie</a></li>
+                <li><a href="airco.html">Airco Service</a></li>
+                <li><a href="banden.html">Banden</a></li>
+                <li><a href="diagnose.html">Diagnose</a></li>
+                <li><a href="over-ons.html">Over Ons</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html#afspraak" class="btn btn-primary btn-block">Afspraak Maken</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge">Uw Auto In Vertrouwde Handen</div>
+            <h1 class="hero-title">Vakmanschap<br><span class="text-accent">Zonder Wachttijd</span></h1>
+            <p class="hero-subtitle">Bij Garage DéDé combineren we jarenlange ervaring met moderne techniek. Van klein onderhoud tot complexe reparaties &mdash; wij staan voor u klaar.</p>
+            <div class="hero-ctas">
+                <a href="contact.html#afspraak" class="btn btn-primary btn-lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Afspraak Maken
+                </a>
+                <a href="tel:+31625275552" class="btn btn-outline btn-lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Bel Direct
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Jaar Ervaring</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-count="128">0</span>
+                    <span class="stat-label">Google Reviews</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-count="4.8">0</span>
+                    <span class="stat-label">Google Score</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="diensten">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Onze Diensten</span>
+                <h2 class="section-title">Oplossingen Voor<br><span class="text-accent">Jouw Auto</span></h2>
+                <p class="section-desc">Van regulier onderhoud tot specialistische reparaties. Wij bieden een compleet pakket aan autoservices.</p>
+            </div>
+            <div class="services-grid">
+                <a href="onderhoud.html" class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1635437536607-b8572f443763?w=600&h=400&fit=crop&q=80" alt="Auto onderhoud" loading="lazy">
+                    </div>
+                    <h3>Onderhoud</h3>
+                    <p>Periodiek onderhoud volgens fabrieksvoorschrift. Olie verversen, filters, vloeistoffen en meer.</p>
+                    <span class="service-link">Meer info <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="reparatie.html" class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1613214150384-14921ff659b2?w=600&h=400&fit=crop&q=80" alt="Auto reparatie" loading="lazy">
+                    </div>
+                    <h3>Reparatie</h3>
+                    <p>Van remmen tot uitlaat, van olielekken tot elektronica. Wij repareren alle merken auto's.</p>
+                    <span class="service-link">Meer info <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="airco.html" class="service-card featured">
+                    <div class="service-badge">Specialist</div>
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1542399204-b8dd4af5113d?w=600&h=400&fit=crop&q=80" alt="Airco service" loading="lazy">
+                    </div>
+                    <h3>Airco Service</h3>
+                    <p>Airco vullen, reinigen en repareren. Wij zijn gecertificeerd airco specialist met de nieuwste apparatuur.</p>
+                    <span class="service-link">Meer info <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="banden.html" class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=600&h=400&fit=crop&q=80" alt="Banden service" loading="lazy">
+                    </div>
+                    <h3>Banden</h3>
+                    <p>Banden wisselen, uitlijnen en balanceren. Zomer- en winterbanden van topmerken op voorraad.</p>
+                    <span class="service-link">Meer info <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="diagnose.html" class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1707085301598-3812ae4c01e1?w=600&h=400&fit=crop&q=80" alt="Auto diagnose" loading="lazy">
+                    </div>
+                    <h3>Diagnose</h3>
+                    <p>Professionele foutdiagnose met de nieuwste apparatuur. Storingslampen uitlezen en analyseren.</p>
+                    <span class="service-link">Meer info <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section about-preview">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-img-main">
+                        <div class="img-placeholder garage-img">
+                            <img src="https://images.unsplash.com/photo-1770656505813-966b8ef8d363?w=800&h=600&fit=crop&q=80" alt="Garage DéDé werkplaats" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="about-img-secondary">
+                        <div class="img-placeholder mechanic-img">
+                            <img src="https://images.unsplash.com/photo-1566206085505-2e0904c3e547?w=600&h=800&fit=crop&q=80" alt="Monteur aan het werk" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="exp-number">15+</span>
+                        <span class="exp-text">Jaar<br>Ervaring</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">Over Garage DéDé</span>
+                    <h2 class="section-title">De Kracht Van<br><span class="text-accent">Vertrouwen & Kwaliteit</span></h2>
+                    <p>Bij Garage DéDé geloven we dat uw auto de beste zorg verdient. Met meer dan 15 jaar ervaring en een passie voor auto's, leveren wij vakwerk waar u op kunt bouwen.</p>
+                    <p>Onze monteurs zijn gecertificeerd en werken uitsluitend met hoogwaardige onderdelen. Transparantie staat bij ons voorop &mdash; geen verrassingen achteraf.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Gecertificeerde monteurs</span>
+                        </div>
+                        <div class="about-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Transparante prijzen</span>
+                        </div>
+                        <div class="about-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Alle merken welkom</span>
+                        </div>
+                        <div class="about-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Snelle service</span>
+                        </div>
+                    </div>
+                    <a href="over-ons.html" class="btn btn-primary">Meer Over Ons</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section why-us">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">Waarom Garage DéDé?</span>
+                <h2 class="section-title">Wat Ons <span class="text-accent">Onderscheidt</span></h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-number">01</div>
+                    <h3>Snelle Service</h3>
+                    <p>Geen weken wachten. Wij plannen u snel in en leveren uw auto zo snel mogelijk terug.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">02</div>
+                    <h3>Eerlijke Prijzen</h3>
+                    <p>Vooraf een duidelijke offerte. Geen verborgen kosten of onverwachte toeslagen.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">03</div>
+                    <h3>Alle Merken</h3>
+                    <p>Van Volkswagen tot Toyota, van BMW tot Peugeot. Wij werken aan alle automerken.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">04</div>
+                    <h3>Moderne Apparatuur</h3>
+                    <p>Onze werkplaats is uitgerust met de nieuwste diagnose- en reparatieapparatuur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">Reviews</span>
+                <h2 class="section-title">Wat Onze Klanten <span class="text-accent">Zeggen</span></h2>
+            </div>
+            <div class="reviews-slider" id="reviewsSlider">
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"Fantastische garage! Mijn auto was binnen een dag klaar. Eerlijke prijs en duidelijke uitleg over wat er gedaan moest worden."</p>
+                        <div class="review-author">
+                            <div class="review-avatar">MV</div>
+                            <div>
+                                <strong>Mohammed V.</strong>
+                                <span>Volkswagen Golf</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"Al jaren klant bij Garage DéDé. Airco service is top, altijd snel geholpen en de prijs is zeer redelijk. Absolute aanrader!"</p>
+                        <div class="review-author">
+                            <div class="review-avatar">SB</div>
+                            <div>
+                                <strong>Sandra B.</strong>
+                                <span>Toyota Yaris</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"Had een storing in mijn dashboard. Binnen no time het probleem gevonden en opgelost. Professioneel en vriendelijk personeel."</p>
+                        <div class="review-author">
+                            <div class="review-avatar">JK</div>
+                            <div>
+                                <strong>Jan K.</strong>
+                                <span>BMW 3 Serie</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"Nieuwe winterbanden laten monteren. Snelle service, goede prijs en ook meteen uitlijning gedaan. Top garage!"</p>
+                        <div class="review-author">
+                            <div class="review-avatar">FD</div>
+                            <div>
+                                <strong>Fatima D.</strong>
+                                <span>Renault Clio</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"Mijn Peugeot had een complex elektronisch probleem. Andere garages konden het niet vinden, maar Dede had het in een uur opgelost!"</p>
+                        <div class="review-author">
+                            <div class="review-avatar">PH</div>
+                            <div>
+                                <strong>Peter H.</strong>
+                                <span>Peugeot 308</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"Hele goede ervaring. Vriendelijk, snel, en ze brengen je zelfs naar huis als je auto er even moet staan. Klantenservice 10/10!"</p>
+                        <div class="review-author">
+                            <div class="review-avatar">AY</div>
+                            <div>
+                                <strong>Ayse Y.</strong>
+                                <span>Opel Corsa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews-nav">
+                    <button class="review-btn prev" id="reviewPrev" aria-label="Vorige review">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <div class="reviews-dots" id="reviewsDots"></div>
+                    <button class="review-btn next" id="reviewNext" aria-label="Volgende review">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Klaar Om Uw Auto<br>De Beste Zorg Te Geven?</h2>
+                    <p>Maak vandaag nog een afspraak en ervaar het verschil van vakmanschap met een persoonlijke aanpak.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html#afspraak" class="btn btn-white btn-lg">Afspraak Maken</a>
+                        <a href="tel:+31625275552" class="btn btn-outline-white btn-lg">06 252 755 52</a>
+                    </div>
+                </div>
+                <div class="cta-decoration">
+                    <svg width="200" height="200" viewBox="0 0 200 200" fill="none" opacity="0.1">
+                        <circle cx="100" cy="100" r="80" stroke="white" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="60" stroke="white" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="40" stroke="white" stroke-width="2"/>
+                        <path d="M100 20v160M20 100h160" stroke="white" stroke-width="1"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">
+                            <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#E63946"/>
+                                <path d="M10 20h20M20 10v20M13 13l14 14M27 13L13 27" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text">
+                            <span class="logo-name">GARAGE DéDé</span>
+                        </span>
+                    </a>
+                    <p class="footer-desc">Uw betrouwbare partner voor auto-onderhoud en reparatie. Vakmanschap sinds 2010.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+                        <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                        <a href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Diensten</h4>
+                    <ul>
+                        <li><a href="onderhoud.html">Onderhoud</a></li>
+                        <li><a href="reparatie.html">Reparatie</a></li>
+                        <li><a href="airco.html">Airco Service</a></li>
+                        <li><a href="banden.html">Banden</a></li>
+                        <li><a href="diagnose.html">Diagnose</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigatie</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="diensten.html">Diensten</a></li>
+                        <li><a href="over-ons.html">Over Ons</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Achterasweg 10-A<br>2141 DG Vijfhuizen
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            <a href="tel:+31625275552">06 252 755 52</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:info@garagedede.nl">info@garagedede.nl</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Garage DéDé. Alle rechten voorbehouden.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Voorwaarden</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/31625275552" class="whatsapp-float" aria-label="WhatsApp ons">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
