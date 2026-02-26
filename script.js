@@ -175,33 +175,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Contact form ---
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
+    // --- Appointment form (Email + WhatsApp) ---
+    const appointmentForm = document.getElementById('appointmentForm');
+    if (appointmentForm) {
+        // Set minimum date to today
+        const datumField = document.getElementById('datum');
+        if (datumField) {
+            const today = new Date().toISOString().split('T')[0];
+            datumField.setAttribute('min', today);
+        }
 
-            // Simple validation
-            if (!data.naam || !data.email || !data.bericht) {
-                alert('Vul alle verplichte velden in.');
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(appointmentForm);
+            const d = Object.fromEntries(formData);
+
+            // Validation
+            if (!d.naam || !d.telefoon || !d.email || !d.dienst || !d.datum) {
+                alert('Vul alle verplichte velden (*) in.');
                 return;
             }
 
-            // Simulate submission
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span>Verzonden!</span>';
-            btn.style.background = '#10b981';
-            btn.disabled = true;
+            // Format date to Dutch format
+            const datumObj = new Date(d.datum + 'T00:00:00');
+            const datumNL = datumObj.toLocaleDateString('nl-NL', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
 
+            // --- 1. Send via Email (Formspree) ---
+            const formspreeId = 'xpwzqkdg'; // Formspree form ID
+            fetch(`https://formspree.io/f/${formspreeId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    _subject: `Nieuwe afspraak - ${d.naam} - ${d.dienst}`,
+                    Naam: d.naam,
+                    Telefoon: d.telefoon,
+                    Email: d.email,
+                    'Auto': d.automerk || '-',
+                    'Kenteken': (d.kenteken || '-').toUpperCase(),
+                    'Dienst': d.dienst,
+                    'Voorkeursdatum': datumNL,
+                    'Voorkeurstijd': d.tijd || 'Geen voorkeur',
+                    'Omschrijving': d.bericht || '-'
+                })
+            }).catch(() => {
+                // Silently fail - WhatsApp is backup
+            });
+
+            // --- 2. Send via WhatsApp ---
+            const waMessage = [
+                `*Nieuwe Afspraak - Garage DéDé*`,
+                ``,
+                `*Naam:* ${d.naam}`,
+                `*Telefoon:* ${d.telefoon}`,
+                `*E-mail:* ${d.email}`,
+                `*Auto:* ${d.automerk || '-'}`,
+                `*Kenteken:* ${(d.kenteken || '-').toUpperCase()}`,
+                ``,
+                `*Dienst:* ${d.dienst}`,
+                `*Datum:* ${datumNL}`,
+                `*Tijd:* ${d.tijd || 'Geen voorkeur'}`,
+                ``,
+                `*Omschrijving:*`,
+                d.bericht || 'Geen extra informatie',
+            ].join('\n');
+
+            const waUrl = `https://wa.me/31625275552?text=${encodeURIComponent(waMessage)}`;
+            window.open(waUrl, '_blank');
+
+            // --- 3. Show success ---
+            const btn = appointmentForm.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.style.opacity = '0.5';
+
+            const successDiv = document.getElementById('formSuccess');
+            if (successDiv) successDiv.style.display = 'block';
+
+            // Reset after 5 seconds
             setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
                 btn.disabled = false;
-                contactForm.reset();
-            }, 3000);
+                btn.style.opacity = '1';
+                if (successDiv) successDiv.style.display = 'none';
+                appointmentForm.reset();
+            }, 5000);
         });
     }
 

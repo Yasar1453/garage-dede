@@ -125,42 +125,77 @@
                 <!-- Right Column: Contact Form -->
                 <div>
                     <div id="afspraak">
-                        <h2 style="font-size: 1.8rem; margin-bottom: 24px;">Stuur Ons Een <span class="text-accent">Bericht</span></h2>
-                        <form id="contactForm">
+                        <h2 style="font-size: 1.8rem; margin-bottom: 8px;">Afspraak <span class="text-accent">Maken</span></h2>
+                        <p style="color: var(--gray-400); margin-bottom: 28px; font-size: 0.95rem;">Vul het formulier in en wij ontvangen uw aanvraag per e-mail en WhatsApp.</p>
+                        <form id="appointmentForm">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="naam">Naam</label>
+                                    <label for="naam">Naam *</label>
                                     <input type="text" id="naam" name="naam" placeholder="Uw volledige naam" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="telefoon">Telefoon</label>
-                                    <input type="tel" id="telefoon" name="telefoon" placeholder="06 - 12 345 678">
+                                    <label for="telefoon">Telefoon *</label>
+                                    <input type="tel" id="telefoon" name="telefoon" placeholder="06 - 12 345 678" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email">E-mailadres</label>
+                                <label for="email">E-mailadres *</label>
                                 <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
                             </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="automerk">Auto (merk + type)</label>
+                                    <input type="text" id="automerk" name="automerk" placeholder="Bijv. VW Golf 2019">
+                                </div>
+                                <div class="form-group">
+                                    <label for="kenteken">Kenteken</label>
+                                    <input type="text" id="kenteken" name="kenteken" placeholder="AB-123-CD" style="text-transform: uppercase;">
+                                </div>
+                            </div>
                             <div class="form-group">
-                                <label for="dienst">Dienst</label>
-                                <select id="dienst" name="dienst">
+                                <label for="dienst">Gewenste dienst *</label>
+                                <select id="dienst" name="dienst" required>
                                     <option value="">Kies een dienst</option>
-                                    <option value="onderhoud">Onderhoud</option>
-                                    <option value="reparatie">Reparatie</option>
-                                    <option value="airco">Airco Service</option>
-                                    <option value="banden">Banden</option>
-                                    <option value="diagnose">Diagnose</option>
-                                    <option value="anders">Anders</option>
+                                    <option value="Onderhoud / APK">Onderhoud / APK</option>
+                                    <option value="Reparatie">Reparatie</option>
+                                    <option value="Airco Service">Airco Service</option>
+                                    <option value="Banden">Banden</option>
+                                    <option value="Diagnose">Diagnose</option>
+                                    <option value="Anders">Anders</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="bericht">Bericht</label>
-                                <textarea id="bericht" name="bericht" placeholder="Beschrijf uw vraag of het probleem met uw auto..." required></textarea>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="datum">Voorkeursdatum *</label>
+                                    <input type="date" id="datum" name="datum" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tijd">Voorkeurstijd</label>
+                                    <select id="tijd" name="tijd">
+                                        <option value="Ochtend (08:00-12:00)">Ochtend (08:00 - 12:00)</option>
+                                        <option value="Middag (12:00-15:00)">Middag (12:00 - 15:00)</option>
+                                        <option value="Namiddag (15:00-18:00)">Namiddag (15:00 - 18:00)</option>
+                                        <option value="Geen voorkeur">Geen voorkeur</option>
+                                    </select>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                                Verstuur Bericht
-                            </button>
+                            <div class="form-group">
+                                <label for="bericht">Omschrijving / klacht</label>
+                                <textarea id="bericht" name="bericht" placeholder="Beschrijf kort het probleem of wat u wilt laten doen..."></textarea>
+                            </div>
+
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                                    Verstuur via E-mail & WhatsApp
+                                </button>
+                            </div>
+
+                            <div id="formSuccess" style="display:none; margin-top: 20px; padding: 20px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; text-align: center;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="margin-bottom: 8px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <p style="color: #10b981; font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">Afspraak verstuurd!</p>
+                                <p style="color: var(--gray-400); font-size: 0.9rem;">De e-mail is verzonden en WhatsApp wordt geopend. Wij nemen zo snel mogelijk contact op.</p>
+                            </div>
                         </form>
                     </div>
                 </div>
