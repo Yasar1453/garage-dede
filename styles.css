@@ -758,35 +758,44 @@ h1, h2, h3, h4, h5, h6 {
     gap: 10px;
 }
 
-/* --- Brand Logos --- */
+/* --- Brand Logos Marquee --- */
 .brand-logos {
-    padding: 40px 0;
+    padding: 36px 0;
     background: var(--dark);
     border-top: 1px solid rgba(255,255,255,0.06);
     border-bottom: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
 }
 
-.brand-logos-track {
+.brand-marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.brand-marquee-track {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 48px;
+    width: max-content;
+    animation: marquee 40s linear infinite;
 }
 
-.brand-logo-text {
-    font-family: var(--font-primary);
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.35);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: var(--transition);
-    white-space: nowrap;
+.brand-marquee-track img {
+    height: 40px;
+    width: auto;
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
 }
 
-.brand-logo-text:hover {
-    color: rgba(255,255,255,0.7);
+.brand-marquee-track img:hover {
+    opacity: 0.8;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* --- Home Contact Section --- */
@@ -1828,13 +1837,12 @@ h1, h2, h3, h4, h5, h6 {
         gap: 40px;
     }
 
-    .brand-logos-track {
-        gap: 20px;
+    .brand-marquee-track {
+        gap: 32px;
     }
 
-    .brand-logo-text {
-        font-size: 0.8rem;
-        letter-spacing: 1px;
+    .brand-marquee-track img {
+        height: 28px;
     }
 
     .cta-box {
