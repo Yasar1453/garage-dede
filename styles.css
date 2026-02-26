@@ -1363,6 +1363,51 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary);
 }
 
+/* --- Appointment Steps --- */
+.appointment-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.appointment-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px;
+    background: var(--dark-card);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.appointment-step h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: var(--white);
+}
+
+.appointment-step p {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    margin: 0;
+    line-height: 1.5;
+}
+
 /* --- About Page --- */
 .about-story {
     background: var(--dark-secondary);
