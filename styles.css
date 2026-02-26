@@ -437,7 +437,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-bg-image {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1631720040176-0d789a643a78?w=1920&h=1080&fit=crop&q=80') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1599474151975-1f978922fa02?w=1920&h=1080&fit=crop&q=80') center/cover no-repeat;
 }
 
 .hero-overlay {
