@@ -262,6 +262,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Home contact form (simple Formspree) ---
+    const homeContactForm = document.getElementById('homeContactForm');
+    if (homeContactForm) {
+        homeContactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(homeContactForm);
+            const d = Object.fromEntries(formData);
+
+            const formspreeId = 'xpwzqkdg';
+            fetch(`https://formspree.io/f/${formspreeId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    _subject: `Vraag via website - ${d.voornaam} ${d.achternaam || ''}`,
+                    Naam: `${d.voornaam} ${d.achternaam || ''}`.trim(),
+                    Telefoon: d.telefoon || '-',
+                    Email: d.email,
+                    Bericht: d.bericht
+                })
+            }).then(() => {
+                homeContactForm.reset();
+                const btn = homeContactForm.querySelector('button[type="submit"]');
+                btn.textContent = 'Verstuurd!';
+                btn.style.background = '#10b981';
+                setTimeout(() => {
+                    btn.textContent = 'Versturen';
+                    btn.style.background = '';
+                }, 3000);
+            }).catch(() => {
+                alert('Er ging iets mis. Probeer het later opnieuw of bel ons.');
+            });
+        });
+    }
+
     // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
