@@ -4,9 +4,9 @@
 
 /* --- CSS Variables --- */
 :root {
-    --primary: #E63946;
-    --primary-dark: #C1121F;
-    --primary-light: #FF6B6B;
+    --primary: #F97316;
+    --primary-dark: #EA580C;
+    --primary-light: #FB923C;
     --dark: #0D1117;
     --dark-secondary: #161B22;
     --dark-card: #1C2128;
@@ -164,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--primary-dark);
     border-color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
 }
 
 .btn-outline {
@@ -437,16 +437,17 @@ h1, h2, h3, h4, h5, h6 {
 .hero-bg-image {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1599474151975-1f978922fa02?w=1920&h=1080&fit=crop&q=80') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1746079074494-822fb0f83364?w=1920&h=1080&fit=crop&q=80') right center/cover no-repeat;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg,
-        rgba(13, 17, 23, 0.92) 0%,
-        rgba(22, 27, 34, 0.80) 50%,
-        rgba(230, 57, 70, 0.12) 100%
+    background: linear-gradient(to right,
+        rgba(13, 17, 23, 0.95) 0%,
+        rgba(13, 17, 23, 0.85) 35%,
+        rgba(13, 17, 23, 0.45) 65%,
+        rgba(13, 17, 23, 0.15) 100%
     );
 }
 
@@ -454,21 +455,22 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(circle at 25% 25%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(230, 57, 70, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 15% 50%, rgba(249, 115, 22, 0.06) 0%, transparent 50%);
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 720px;
+    max-width: 620px;
+    margin-left: 5%;
+    margin-right: auto;
 }
 
 .hero-badge {
     display: inline-block;
     padding: 8px 20px;
-    background: rgba(230, 57, 70, 0.15);
-    border: 1px solid rgba(230, 57, 70, 0.3);
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.3);
     border-radius: 100px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -614,7 +616,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-slide:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    border-color: rgba(230, 57, 70, 0.2);
+    border-color: rgba(249, 115, 22, 0.2);
 }
 
 .service-slide-text {
@@ -699,7 +701,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(230, 57, 70, 0.2);
+    border-color: rgba(249, 115, 22, 0.2);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
@@ -708,8 +710,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card.featured {
-    border-color: rgba(230, 57, 70, 0.3);
-    background: linear-gradient(135deg, var(--dark-card) 0%, rgba(230, 57, 70, 0.08) 100%);
+    border-color: rgba(249, 115, 22, 0.3);
+    background: linear-gradient(135deg, var(--dark-card) 0%, rgba(249, 115, 22, 0.08) 100%);
 }
 
 .service-badge {
@@ -924,7 +926,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-img-secondary .img-placeholder {
     height: 100%;
-    background: linear-gradient(135deg, rgba(230, 57, 70, 0.1) 0%, var(--dark-card) 100%);
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, var(--dark-card) 100%);
     border: 1px solid rgba(255,255,255,0.06);
 }
 
@@ -939,7 +941,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 16px 28px;
     background: var(--primary);
     border-radius: var(--radius-md);
-    box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4);
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
 }
 
 .exp-number {
@@ -1003,7 +1005,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .why-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(230, 57, 70, 0.2);
+    border-color: rgba(249, 115, 22, 0.2);
 }
 
 .why-number {
@@ -1312,7 +1314,7 @@ h1, h2, h3, h4, h5, h6 {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.08) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
 }
 
 .page-hero .container {
@@ -1351,6 +1353,59 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--gray-400);
     max-width: 600px;
     line-height: 1.7;
+}
+
+/* --- Page Hero with Background Image --- */
+.page-hero.has-bg {
+    padding: 200px 0 100px;
+}
+
+.page-hero.has-bg .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.page-hero.has-bg .page-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-hero.has-bg .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(13, 17, 23, 0.88) 0%,
+        rgba(22, 27, 34, 0.82) 50%,
+        rgba(249, 115, 22, 0.10) 100%
+    );
+    z-index: 1;
+}
+
+/* --- Content Image Section --- */
+.content-image-section {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.content-image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .page-hero.has-bg {
+        padding: 160px 0 60px;
+    }
+    .content-image-section {
+        height: 200px;
+    }
 }
 
 /* --- Service Detail Page --- */
@@ -1441,8 +1496,8 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 8px;
     padding: 12px 20px;
-    background: rgba(230, 57, 70, 0.1);
-    border: 1px solid rgba(230, 57, 70, 0.2);
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
     border-radius: var(--radius-sm);
     margin-top: 24px;
     font-weight: 600;
@@ -1473,7 +1528,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-info-card:hover {
-    border-color: rgba(230, 57, 70, 0.2);
+    border-color: rgba(249, 115, 22, 0.2);
 }
 
 .contact-info-card svg {
@@ -1526,7 +1581,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
 }
 
 .form-group textarea {
@@ -1665,14 +1720,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .value-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(230, 57, 70, 0.2);
+    border-color: rgba(249, 115, 22, 0.2);
 }
 
 .value-icon {
     width: 64px;
     height: 64px;
     margin: 0 auto 20px;
-    background: rgba(230, 57, 70, 0.1);
+    background: rgba(249, 115, 22, 0.1);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
