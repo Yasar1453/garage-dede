@@ -30,90 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Reviews Slider ---
-    const track = document.getElementById('reviewsTrack');
-    const prevBtn = document.getElementById('reviewPrev');
-    const nextBtn = document.getElementById('reviewNext');
-    const dotsContainer = document.getElementById('reviewsDots');
-
-    if (track && prevBtn && nextBtn && dotsContainer) {
-        const cards = track.querySelectorAll('.review-card');
-        let currentIndex = 0;
-        let cardsPerView = getCardsPerView();
-
-        function getCardsPerView() {
-            if (window.innerWidth < 768) return 1;
-            if (window.innerWidth < 1024) return 2;
-            return 3;
-        }
-
-        function getTotalPages() {
-            return Math.max(1, cards.length - cardsPerView + 1);
-        }
-
-        function createDots() {
-            dotsContainer.innerHTML = '';
-            const totalPages = getTotalPages();
-            for (let i = 0; i < totalPages; i++) {
-                const dot = document.createElement('div');
-                dot.className = `dot ${i === currentIndex ? 'active' : ''}`;
-                dot.addEventListener('click', () => goToSlide(i));
-                dotsContainer.appendChild(dot);
-            }
-        }
-
-        function updateSlider() {
-            if (cards.length === 0) return;
-            const cardWidth = cards[0].offsetWidth + 24; // card width + gap
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-            dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
-            });
-        }
-
-        function goToSlide(index) {
-            const maxIndex = getTotalPages() - 1;
-            currentIndex = Math.max(0, Math.min(index, maxIndex));
-            updateSlider();
-        }
-
-        prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-        nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-
-        window.addEventListener('resize', () => {
-            cardsPerView = getCardsPerView();
-            if (currentIndex >= getTotalPages()) currentIndex = getTotalPages() - 1;
-            createDots();
-            updateSlider();
-        });
-
-        createDots();
-
-        // Auto-play
-        let autoPlay = setInterval(() => {
-            if (currentIndex >= getTotalPages() - 1) {
-                currentIndex = 0;
-            } else {
-                currentIndex++;
-            }
-            updateSlider();
-            createDots();
-        }, 5000);
-
-        track.closest('.reviews-slider').addEventListener('mouseenter', () => clearInterval(autoPlay));
-        track.closest('.reviews-slider').addEventListener('mouseleave', () => {
-            autoPlay = setInterval(() => {
-                if (currentIndex >= getTotalPages() - 1) {
-                    currentIndex = 0;
-                } else {
-                    currentIndex++;
-                }
-                updateSlider();
-                createDots();
-            }, 5000);
-        });
-    }
-
     // --- Animate numbers on scroll ---
     const statNumbers = document.querySelectorAll('.stat-number[data-count]');
     if (statNumbers.length > 0) {
@@ -153,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Scroll reveal animations ---
-    const reveals = document.querySelectorAll('.service-card, .why-card, .review-card, .value-card, .contact-info-card');
+    const reveals = document.querySelectorAll('.service-card, .why-card, .value-card, .contact-info-card');
     if (reveals.length > 0) {
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
